@@ -1,5 +1,7 @@
 # UI Sample
 
+![](dragonruby-ui-sample.gif)
+
 This is a demonstration of some simple UI elements, based on the excellent free assets at [kenney.nl](https://www.kenney.nl/)
 - Self-truncating labels
 - 9-slice resizable panels
