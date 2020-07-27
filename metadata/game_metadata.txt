@@ -1,0 +1,6 @@
+devid=danhealy
+devtitle=Dan Healy
+gameid=dragonruby-kenneyui-sample
+gametitle=Kenney UI Sample
+version=1.0
+icon=metadata/icon.png
