@@ -31,4 +31,5 @@ Suggested things to try:
 - Try creating a nine-slice panel without splitting the assets apart, using `source_[x/y/w/h]`
 
 #### Changelog
+- July 28 2020: Moved the `lib/*` stuff to `Zif` namespace, so it can be reused by others more easily
 - July 27 2020: Initial commit
