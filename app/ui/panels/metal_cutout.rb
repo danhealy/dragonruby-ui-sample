@@ -1,6 +1,6 @@
 # The Kenney UI Space pack included this inset cutout, desgned to partition the metal panel.
 # This is a nine-slice where the left/right/bottom edges are just fill and don't need to be defined.
-class MetalCutout < NinePanel
+class MetalCutout < Zif::NinePanel
   SPRITES_PATH = "sprites/kenney-uipack-space/danhealy-modified".freeze
   TOP_WIDTH = 7
   BOTTOM_WIDTH = 6
@@ -21,7 +21,7 @@ class MetalCutout < NinePanel
 
     resize(width, height)
 
-    self.upper_left_corner = Sprite.new.tap do |s|
+    self.upper_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = @height - TOP_WIDTH
       s.w = TOP_WIDTH
@@ -29,7 +29,7 @@ class MetalCutout < NinePanel
       s.path = "#{SPRITES_PATH}/plate_top_corner.png"
     end
 
-    self.upper_right_corner = Sprite.new.tap do |s|
+    self.upper_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - TOP_WIDTH
       s.y = @height - TOP_WIDTH
       s.w = TOP_WIDTH
@@ -38,7 +38,7 @@ class MetalCutout < NinePanel
       s.flip_horizontally = true
     end
 
-    self.lower_right_corner = Sprite.new.tap do |s|
+    self.lower_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - BOTTOM_WIDTH
       s.y = 0
       s.w = BOTTOM_WIDTH
@@ -47,7 +47,7 @@ class MetalCutout < NinePanel
       s.flip_horizontally = true
     end
 
-    self.lower_left_corner = Sprite.new.tap do |s|
+    self.lower_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = BOTTOM_WIDTH
@@ -55,7 +55,7 @@ class MetalCutout < NinePanel
       s.path = "#{SPRITES_PATH}/plate_bottom_corner.png"
     end
 
-    self.upper_edge = Sprite.new.tap do |s|
+    self.upper_edge = Zif::Sprite.new.tap do |s|
       s.x = TOP_WIDTH
       s.y = @height - TOP_WIDTH
       s.w = @width - 2 * TOP_WIDTH
@@ -64,7 +64,7 @@ class MetalCutout < NinePanel
     end
 
     # Need to create the bottom edge so that we don't overlap the corners
-    self.lower_edge = Sprite.new.tap do |s|
+    self.lower_edge = Zif::Sprite.new.tap do |s|
       s.x = BOTTOM_WIDTH
       s.y = 0
       s.w = @width - 2 * BOTTOM_WIDTH
@@ -74,7 +74,7 @@ class MetalCutout < NinePanel
 
     # No left/right edge, just fill
 
-    @fill = Sprite.new.tap do |s|
+    @fill = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = BOTTOM_WIDTH
       s.w = @width

@@ -1,5 +1,5 @@
 # A two-stage button, sized for all of the tall buttons in the Kenny UI pack.
-class TallButton < TwoStageButton
+class TallButton < Zif::TwoStageButton
   SPRITES_PATH = "sprites/kenney-uipack-fixed/danhealy-modified".freeze
   VALID_COLORS = %i[blue green red yellow white].freeze
 
@@ -38,7 +38,7 @@ class TallButton < TwoStageButton
 
     resize(width, cur_height)
 
-    @normal << Sprite.new.tap do |s|
+    @normal << Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = EDGE_WIDTH
@@ -46,7 +46,7 @@ class TallButton < TwoStageButton
       s.path = "#{SPRITES_PATH}/button_normal_#{@color}_edge.png"
     end
 
-    @normal << Sprite.new.tap do |s|
+    @normal << Zif::Sprite.new.tap do |s|
       s.x = EDGE_WIDTH
       s.y = 0
       s.w = width - (2 * EDGE_WIDTH)
@@ -54,7 +54,7 @@ class TallButton < TwoStageButton
       s.path = "#{SPRITES_PATH}/button_normal_#{@color}_center.png"
     end
 
-    @normal << Sprite.new.tap do |s|
+    @normal << Zif::Sprite.new.tap do |s|
       s.x = width - EDGE_WIDTH
       s.y = 0
       s.w = EDGE_WIDTH
@@ -63,7 +63,7 @@ class TallButton < TwoStageButton
       s.flip_horizontally = true
     end
 
-    @pressed << Sprite.new.tap do |s|
+    @pressed << Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = EDGE_WIDTH
@@ -71,7 +71,7 @@ class TallButton < TwoStageButton
       s.path = "#{SPRITES_PATH}/button_pressed_#{@color}_edge.png"
     end
 
-    @pressed << Sprite.new.tap do |s|
+    @pressed << Zif::Sprite.new.tap do |s|
       s.x = EDGE_WIDTH
       s.y = 0
       s.w = width - (2 * EDGE_WIDTH)
@@ -79,7 +79,7 @@ class TallButton < TwoStageButton
       s.path = "#{SPRITES_PATH}/button_pressed_#{@color}_center.png"
     end
 
-    @pressed << Sprite.new.tap do |s|
+    @pressed << Zif::Sprite.new.tap do |s|
       s.x = width - EDGE_WIDTH
       s.y = 0
       s.w = EDGE_WIDTH

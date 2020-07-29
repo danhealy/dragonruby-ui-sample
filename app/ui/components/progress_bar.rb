@@ -3,7 +3,7 @@
 # Filling the shadow is a bar with fixed edges and stretchy center.
 # Setting the progress causes a redraw.
 # If progress is zero, the filled bar disappears.
-class ProgressBar < ComplexSprite
+class ProgressBar < Zif::ComplexSprite
   SPRITES_PATH = "sprites/kenney-uipack-space/PNG".freeze
 
   attr_accessor :filled_bar, :shadow
@@ -42,7 +42,7 @@ class ProgressBar < ComplexSprite
       # Cry (TODO)
     end
 
-    @shadow << Sprite.new.tap do |s|
+    @shadow << Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = EDGE_MARGIN
@@ -50,7 +50,7 @@ class ProgressBar < ComplexSprite
       s.path = "#{SPRITES_PATH}/#{SPRITE_NAMES[@orientation]}_shadow_left.png"
     end
 
-    @shadow << Sprite.new.tap do |s|
+    @shadow << Zif::Sprite.new.tap do |s|
       s.x = EDGE_MARGIN
       s.y = 0
       s.w = @max_width - (2 * EDGE_MARGIN)
@@ -58,7 +58,7 @@ class ProgressBar < ComplexSprite
       s.path = "#{SPRITES_PATH}/#{SPRITE_NAMES[@orientation]}_shadow_mid.png"
     end
 
-    @shadow << Sprite.new.tap do |s|
+    @shadow << Zif::Sprite.new.tap do |s|
       s.x = @max_width - EDGE_MARGIN
       s.y = 0
       s.w = EDGE_MARGIN
@@ -66,7 +66,7 @@ class ProgressBar < ComplexSprite
       s.path = "#{SPRITES_PATH}/#{SPRITE_NAMES[@orientation]}_shadow_right.png"
     end
 
-    @filled_bar_left = Sprite.new.tap do |s|
+    @filled_bar_left = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = EDGE_MARGIN
@@ -74,14 +74,14 @@ class ProgressBar < ComplexSprite
       s.path = "#{SPRITES_PATH}/#{SPRITE_NAMES[@orientation]}_#{@color}_left.png"
     end
 
-    @filled_bar_mid = Sprite.new.tap do |s|
+    @filled_bar_mid = Zif::Sprite.new.tap do |s|
       s.x = EDGE_MARGIN
       s.y = 0
       s.h = HEIGHT
       s.path = "#{SPRITES_PATH}/#{SPRITE_NAMES[@orientation]}_#{@color}_mid.png"
     end
 
-    @filled_bar_edge = Sprite.new.tap do |s|
+    @filled_bar_edge = Zif::Sprite.new.tap do |s|
       s.y = 0
       s.w = EDGE_MARGIN
       s.h = HEIGHT

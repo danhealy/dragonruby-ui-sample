@@ -1,5 +1,5 @@
 # Settings for the Kenney Future font
-class FutureLabel < Label
+class FutureLabel < Zif::Label
   FONT = "sprites/kenney-uipack-space/Fonts/kenvector_future.ttf".freeze
 
   COLOR = {

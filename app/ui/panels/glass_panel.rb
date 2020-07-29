@@ -1,6 +1,6 @@
 # The Kenney UI Space pack has transparent panels with optional cut corners.
 # This is a normal nine slice where each corner has two options.
-class GlassPanel < NinePanel
+class GlassPanel < Zif::NinePanel
   SPRITES_PATH = "sprites/kenney-uipack-space/danhealy-modified".freeze
   WIDTH = 16
 
@@ -20,7 +20,7 @@ class GlassPanel < NinePanel
 
     resize(width, height)
 
-    self.upper_left_corner = Sprite.new.tap do |s|
+    self.upper_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = @height - WIDTH
       s.w = WIDTH
@@ -28,7 +28,7 @@ class GlassPanel < NinePanel
       s.path = "#{SPRITES_PATH}/glass_#{cut_corners[3] ? 'cut' : 'round'}_corner.png"
     end
 
-    self.upper_right_corner = Sprite.new.tap do |s|
+    self.upper_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - WIDTH
       s.y = @height - WIDTH
       s.w = WIDTH
@@ -37,7 +37,7 @@ class GlassPanel < NinePanel
       s.flip_horizontally = true
     end
 
-    self.lower_right_corner = Sprite.new.tap do |s|
+    self.lower_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - WIDTH
       s.y = 0
       s.w = WIDTH
@@ -47,7 +47,7 @@ class GlassPanel < NinePanel
       s.flip_horizontally = true
     end
 
-    self.lower_left_corner = Sprite.new.tap do |s|
+    self.lower_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = WIDTH
@@ -56,7 +56,7 @@ class GlassPanel < NinePanel
       s.flip_vertically = true
     end
 
-    self.upper_edge = Sprite.new.tap do |s|
+    self.upper_edge = Zif::Sprite.new.tap do |s|
       s.x = WIDTH
       s.y = @height - WIDTH
       s.w = @width - 2 * WIDTH
@@ -64,7 +64,7 @@ class GlassPanel < NinePanel
       s.path = "#{SPRITES_PATH}/glass_side.png"
     end
 
-    self.right_edge = Sprite.new.tap do |s|
+    self.right_edge = Zif::Sprite.new.tap do |s|
       s.x = @width - WIDTH
       s.y = WIDTH
       s.w = WIDTH
@@ -72,7 +72,7 @@ class GlassPanel < NinePanel
       s.path = "#{SPRITES_PATH}/glass_side_right.png"
     end
 
-    self.lower_edge = Sprite.new.tap do |s|
+    self.lower_edge = Zif::Sprite.new.tap do |s|
       s.x = WIDTH
       s.y = 0
       s.w = @width - 2 * WIDTH
@@ -81,7 +81,7 @@ class GlassPanel < NinePanel
       s.flip_vertically = true
     end
 
-    self.left_edge = Sprite.new.tap do |s|
+    self.left_edge = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = WIDTH
       s.w = WIDTH
@@ -90,7 +90,7 @@ class GlassPanel < NinePanel
       s.flip_horizontally = true
     end
 
-    @fill = Sprite.new.tap do |s|
+    @fill = Zif::Sprite.new.tap do |s|
       s.x = WIDTH
       s.y = WIDTH
       s.w = @width - 2 * WIDTH

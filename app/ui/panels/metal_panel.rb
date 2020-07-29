@@ -1,7 +1,7 @@
 # The Kenney UI Space pack contains these metal panels which have a colorful tab in the upper left.
 # This is a bit more complex than a normal nine-slice, since the top edge will actually have 3 parts
 # So we are using NinePanelEdge for this, and regular sprites for the other 8 sections.
-class MetalPanel < NinePanel
+class MetalPanel < Zif::NinePanel
   attr_accessor :upper_edge_panel
 
   SPRITES_PATH = "sprites/kenney-uipack-space/danhealy-modified".freeze
@@ -28,7 +28,7 @@ class MetalPanel < NinePanel
     @min_height = MetalPanel.min_height
     resize(width, height)
 
-    @upper_edge_panel = NinePanelEdge.new("#{target_name}_upper_edge")
+    @upper_edge_panel = Zif::NinePanelEdge.new("#{target_name}_upper_edge")
     @upper_edge_panel.left_edge_path    = "#{SPRITES_PATH}/metal_#{color}_side.png"
     @upper_edge_panel.left_edge_height  = BIG_CORNER
     @upper_edge_panel.transition_path   = "#{SPRITES_PATH}/metal_#{color}_side_transition.png"
@@ -45,7 +45,7 @@ class MetalPanel < NinePanel
 
     self.upper_edge = upper_edge_panel_sprites
 
-    self.right_edge = Sprite.new.tap do |s|
+    self.right_edge = Zif::Sprite.new.tap do |s|
       s.x = BIG_CORNER + upper_edge_panel.width
       s.y = SMALL_CORNER
       s.w = SMALL_CORNER
@@ -53,7 +53,7 @@ class MetalPanel < NinePanel
       s.path = "#{SPRITES_PATH}/metal_side_right.png"
     end
 
-    self.lower_edge = Sprite.new.tap do |s|
+    self.lower_edge = Zif::Sprite.new.tap do |s|
       s.x = SMALL_CORNER
       s.y = 0
       s.w = @width - 2 * SMALL_CORNER
@@ -62,7 +62,7 @@ class MetalPanel < NinePanel
       s.flip_vertically = true
     end
 
-    self.left_edge = Sprite.new.tap do |s|
+    self.left_edge = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = SMALL_CORNER
       s.w = SMALL_CORNER
@@ -71,7 +71,7 @@ class MetalPanel < NinePanel
       s.flip_horizontally = true
     end
 
-    self.upper_left_corner = Sprite.new.tap do |s|
+    self.upper_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = @height - BIG_CORNER
       s.w = BIG_CORNER
@@ -79,7 +79,7 @@ class MetalPanel < NinePanel
       s.path = "#{SPRITES_PATH}/metal_#{color}_corner.png"
     end
 
-    self.upper_right_corner = Sprite.new.tap do |s|
+    self.upper_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - SMALL_CORNER
       s.y = @height - SMALL_CORNER
       s.w = SMALL_CORNER
@@ -88,7 +88,7 @@ class MetalPanel < NinePanel
       s.flip_horizontally = true
     end
 
-    self.lower_right_corner = Sprite.new.tap do |s|
+    self.lower_right_corner = Zif::Sprite.new.tap do |s|
       s.x = @width - SMALL_CORNER
       s.y = 0
       s.w = SMALL_CORNER
@@ -98,7 +98,7 @@ class MetalPanel < NinePanel
       s.flip_vertically = true
     end
 
-    self.lower_left_corner = Sprite.new.tap do |s|
+    self.lower_left_corner = Zif::Sprite.new.tap do |s|
       s.x = 0
       s.y = 0
       s.w = SMALL_CORNER
@@ -107,7 +107,7 @@ class MetalPanel < NinePanel
       s.flip_vertically = true
     end
 
-    @fill = Sprite.new.tap do |s|
+    @fill = Zif::Sprite.new.tap do |s|
       s.x = SMALL_CORNER
       s.y = SMALL_CORNER
       s.w = @width - 2 * SMALL_CORNER
